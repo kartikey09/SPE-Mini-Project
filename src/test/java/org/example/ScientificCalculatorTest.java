@@ -9,7 +9,9 @@ public class ScientificCalculatorTest {
     @Test
     void testSquareRoot() {
         assertEquals(4.0, calc.squareRoot(16.0), 0.001);
-        assertEquals(Double.NaN, calc.squareRoot(-1.0)); // Edge case
+        assertThrows(IllegalArgumentException.class, () -> {
+            calc.squareRoot(-1.0);
+        });
     }
 
     @Test
