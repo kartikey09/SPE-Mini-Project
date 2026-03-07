@@ -74,6 +74,7 @@ class ScientificCalculatorTest {
     void testNaturalLogOfZeroOrNegative() {
         assertThrows(IllegalArgumentException.class, () -> {
             calculator.naturalLog(0);
+            ;
         });
     }
 
