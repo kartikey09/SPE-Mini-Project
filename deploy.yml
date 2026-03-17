@@ -1,6 +1,5 @@
 ---
 - name: Deploy Scientific Calculator Container
-  # Runs directly on your Mac host
   hosts: localhost
   connection: local
   
@@ -10,7 +9,6 @@
 
     - name: Stop the existing calculator container (if it exists)
       command: docker stop calc-container
-      # Ignores the error if this is the first time running and it doesn't exist yet
       ignore_errors: yes 
 
     - name: Remove the old container
@@ -18,5 +16,4 @@
       ignore_errors: yes
 
     - name: Start the new interactive calculator container
-      # -d (detached) -i (interactive) -t (allocate TTY)
       command: docker run -dit --name calc-container ranag99/spe-mini-project:latest
